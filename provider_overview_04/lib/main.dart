@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // 하위 모든 위젯에서 Dog 인스턴스를 엑세스 가능 + age 가 변했을 때 ui 리빌드 가능
     return ChangeNotifierProvider<Dog>(
       create: (context) => Dog(name: 'dog04', breed: 'breed04'),
       child: MaterialApp(
@@ -47,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
+              // name 은 변하지 않기 때문에 listen 할 필요가 없다
               '- name: ${Provider.of<Dog>(context).name}',
               style: const TextStyle(fontSize: 20.0),
             ),
@@ -67,6 +69,7 @@ class BreedAndAge extends StatelessWidget {
     return Column(
       children: [
         Text(
+          // breed 는 변하지 않기 때문에 listen 할 필요가 없다
           '- breed: ${Provider.of<Dog>(context).breed}',
           style: const TextStyle(fontSize: 20.0),
         ),
@@ -89,6 +92,7 @@ class Age extends StatelessWidget {
           style: const TextStyle(fontSize: 20.0),
         ),
         const SizedBox(height: 20.0),
+         // listen: false 를 지운다면? 디버그 콘솔에 에러메세지 표시됨
         ElevatedButton(
           onPressed: () => Provider.of<Dog>(context, listen: false).grow(),
           child: const Text(

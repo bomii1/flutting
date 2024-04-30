@@ -124,3 +124,22 @@ class Age extends StatelessWidget {
     );
   }
 }
+
+/*
+ChangeNotifierProvider = ChangeNotifier + Provider
+1. Create an instance of ChangeNotifier
+2. Provide an easy way to access ChangeNotifier for widgets that
+need it, and rebuilds the UI if necessary
+-> ChangeNotifier 가 필요한 위젯에 쉽게 access 할 수 있는 수단을 제공하고, 
+필요하면 UI 를 리빌드한다
+1. ChangeNotifier 의 인스턴스를 필요할 때 만든다 -> override 될 수 있다
+2. ChangeNotifier 가 필요없어지면 메모리에서 없애준다 -> dispose
+1. construct 를 통해서 인스턴스를 전달할 필요없이 Provider.of 를 통해 인스턴스를 
+쉽게 접근할 수 있다
+2. Provider.of<T>(context) -> 변화를 리슨해서 변화가 있으면 ui 를 리빌드 할 수 있다
+Provider.of<T>(context, listen:false) -> ChangeNotifier 의 접근만하고, 변화를 리슨하지 않는다
+-> 두 가지의 경우가 필요, 변화를 리슨하는 것이 필요하긴 하지만 ui 를 리빌드하는 경우가 필요하지 않을 때도
+있기 때문.
+즉, 첫번째는 변화 리슨 + ui 리빌드 모두가 필요한 경우
+두번째는 변화 리슨만 필요한 경우
+*/
