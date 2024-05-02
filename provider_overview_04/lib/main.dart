@@ -104,3 +104,22 @@ class Age extends StatelessWidget {
     );
   }
 }
+
+/*
+Provider 은 위젯이기 때문에 다른 위젯에서 가능한 것은 가능하다
+
+context.read<T> -> T
+- Provider.of<T>(context, listen: false) 와 동일
+- 타입 T 오브젝트를 찾아서 리턴해줌
+
+context.watch<T>() -> T
+- Provider.of<T>(context) 를 대체
+- 타입 T 오브젝트를 찾아서 리턴 + value change 를 리슨
+
+context.select<T, R>(R selector(T value)) -> R
+- context.select<Dog, String>((Dog dog) => dog.name) -> 예시임, name 이 변할 때만 리빌드함 == 퍼포먼스 좋음
+- 프로퍼티를 많이 가지고 있는 오브젝트의 특정 프로퍼티를 리슨하고 싶을 때 사용
+- context.watch 는 오브젝트의 값 하나만 변해도 리빌드를 하는데, context.select 는 
+리슨하고 싶은 것만 선별적으로 리슨 가능
+
+*/
