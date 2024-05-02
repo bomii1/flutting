@@ -42,6 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Provider 10'),
       ),
       body: Selector<Dog, String>(
+        // 두 개의 타입을 줌 -> object 의 타입, 선택할 프로퍼티의 타입
         selector: (BuildContext context, Dog dog) => dog.name,
         builder: (BuildContext context, String name, Widget? child) {
           return Center(
@@ -121,3 +122,9 @@ class Age extends StatelessWidget {
     );
   }
 }
+
+
+/* 
+Selector -> Consumer 위젯과 비슷하지만 더 세세한 컨트롤을 할 수 있게 해주는 위젯
+
+*/
