@@ -80,3 +80,11 @@ class IncreaseButton extends StatelessWidget {
     );
   }
 }
+
+
+/*
+왜 업데이트가 발생했을까?
+ProxyProvider 의 업데이트가 언제 호출?
+-> 프로바이더가 의존하는 다른 프로바이더의 값이 변하면 업데이트 호출
+-> 프록시프로바이더가 리빌드 될 때 다시 업데이트 호출 (지금은 리빌드가 되는 케이스)
+*/

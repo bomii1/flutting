@@ -80,3 +80,11 @@ class IncreaseButton extends StatelessWidget {
     );
   }
 }
+
+/*
+버튼을 눌렀을 때 count 값이 증가하는 것은 콘솔로 보이지만 화면은 바뀌지 않음
+
+why?
+create 는 Provider 를 만들 때 한번만 호출됨
+changing value 에 대해 Provider 의 값을 변경시키기 위해서는 ProxyProvider 를 써야 함
+*/

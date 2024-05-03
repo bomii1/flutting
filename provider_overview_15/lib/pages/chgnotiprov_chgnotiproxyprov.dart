@@ -11,7 +11,7 @@ class Counter with ChangeNotifier {
 }
 
 class Translations with ChangeNotifier {
-  late int _value;
+  late int _value; // -> 업데이트해서 값이 업데이트 될 예정이기 때문
 
   void update(Counter counter) {
     _value = counter.counter;

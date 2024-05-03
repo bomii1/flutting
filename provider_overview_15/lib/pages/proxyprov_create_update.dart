@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Translations {
-  late int _value;
+  late int _value; // -> 업데이트로 값이 주어질 것이기 때문에 late 로 선언
 
   void update(int newValue) {
     _value = newValue;
@@ -88,3 +88,8 @@ class IncreaseButton extends StatelessWidget {
     );
   }
 }
+
+/*
+굳이 이렇게 할 필요없다
+-> 
+*/
