@@ -77,12 +77,14 @@ class _MyHomePageState extends State<MyHomePage> {
   void submit() {
     setState(() {
       autovalidateMode = AutovalidateMode.always;
+      // 일단 한번 폼이 submit 되고 나서는 모든 폼 인풋에 대해
+      // 벨리데이션을 수행한다
     });
 
     final form = formKey.currentState;
 
     if (form == null || !form.validate()) return;
-
+    // 널이면 리턴 아니면 폼을 세이브
     form.save();
 
     // to avoid async gap warning
@@ -147,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 shrinkWrap: true,
                 children: [
                   TextFormField(
-                    autofocus: true,
+                    autofocus: true, // 바로 입력할 수 있도록
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       label: Text('Search'),
@@ -180,3 +182,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+/*
+addListener 
+state 의 값에 따라 액션을 처리할 보이드 콜백만듦
+initState 메소드에서 ChangeNotifier 의 addListener 를 이용해 보이드 콜백 등록
+리스너는 저절로 dispose 되지 않기 때문에 스테이트풀 위젯의 dispose 메소드에서
+ChangeNotifier 의 리무스 리스너를 이용해 제거
+*/
