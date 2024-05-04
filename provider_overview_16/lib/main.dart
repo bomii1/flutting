@@ -87,3 +87,10 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
+/*
+ProviderNotFound Exception
+-> 새로운 프로바이더를 add 했는데 핫 리스타트 시키지 않아서 에러 / 핫리스타트 시키면 해결됨
+-> 라우트 관련
+-> 잘못된 빌드 컨텍스트 사용
+*/
