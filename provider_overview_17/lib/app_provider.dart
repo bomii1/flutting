@@ -12,7 +12,7 @@ enum AppState {
 
 class AppProvider with ChangeNotifier {
   AppState _state = AppState.initial;
-  AppState get state => _state;
+  AppState get state => _state; // 외부에서 엑세스 할 수 있도록
 
   Future<void> getResult(/*BuildContext context, */ String searchTerm) async {
     _state = AppState.loading;

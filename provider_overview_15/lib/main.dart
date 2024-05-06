@@ -168,6 +168,4 @@ ChangeNotifier 를 업데이트해서 직접적으로 만들지 말라
 -> ChangeNotifier 를 인스턴스가 변할 때마다 매번 create 하는 것은 ChangeNotifier 의 
 디자인 원칙에도 반한다고 생각
 -> 가능하면 ProxyProvider 를 써라 == immutable 한 오브젝트를 만드는 것을 선호
-
-
 */

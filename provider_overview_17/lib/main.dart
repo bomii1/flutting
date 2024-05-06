@@ -189,4 +189,7 @@ state 의 값에 따라 액션을 처리할 보이드 콜백만듦
 initState 메소드에서 ChangeNotifier 의 addListener 를 이용해 보이드 콜백 등록
 리스너는 저절로 dispose 되지 않기 때문에 스테이트풀 위젯의 dispose 메소드에서
 ChangeNotifier 의 리무스 리스너를 이용해 제거
+
+에러발생시 rethrow 하지 않는 방식?
+-> ui 에서 에러를 처리해야 함
 */
