@@ -7,6 +7,8 @@ class TodoSearchState extends Equatable {
     required this.searchTerm,
   });
 
+  // 모든 state 를 다루는 데에 일관성을 지키는 것
+  // type 의 충돌을 피할 수 있음
   factory TodoSearchState.initial() {
     return const TodoSearchState(searchTerm: '');
   }
@@ -26,12 +28,14 @@ class TodoSearchState extends Equatable {
   }
 }
 
+// state 가 바뀔 때마다 리슨하는 위젯에게 값이 변경됐다는 것을 알려줄 클래스
 class TodoSearch with ChangeNotifier {
   TodoSearchState _state = TodoSearchState.initial();
   TodoSearchState get state => _state;
 
+  // state 를 변경하는 함수
   void setSearchTerm(String newSearchTerm) {
-    _state = _state.copyWith(searchTerm: newSearchTerm);
+    _state = _state.copyWith(searchTerm: newSearchTerm); // 새로운 state 를 만듦
     notifyListeners();
   }
 }
