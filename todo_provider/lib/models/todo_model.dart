@@ -14,13 +14,15 @@ class Todo extends Equatable {
     String? id,
     required this.desc,
     this.completed = false,
-  }) : id = id ?? uuid.v4();
+  }) : id = id ?? uuid.v4(); 
+  // ?? -> null 병합 연산자
+  // id 가 null 이 아니면 id 왼쪽 값 반환, null 이면 오른쪽 값 반환
 
   @override
   List<Object> get props => [id, desc, completed];
 
   @override
-  bool get stringify => true; 
+  bool get stringify => true; // true -> 객체를 비교할 때 toString 메서드를 사용하여 문자열로 변환 후 비교
 }
 
 enum Filter {

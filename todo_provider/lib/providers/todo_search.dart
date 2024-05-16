@@ -39,3 +39,9 @@ class TodoSearch with ChangeNotifier {
     notifyListeners();
   }
 }
+
+/*
+검색량 줄이기
+현재는 매 글자가 변할 때 마다 검색을 함 -> 이렇게 하면 너무 많은 데이터가 왔다갔다함
+사용자가 일정 기간 글자를 더 누르지 않을 때 검색하도록
+*/

@@ -75,3 +75,19 @@ copyWith 함수를 사용해 새로운 state 만듦
 Object instance 들의 equality check 을 쉽게 할 수 있음
 stringify 등의 편의 함수 제공
 */
+
+/*
+마무리 정리
+Independent States -> ChangeNotifierProvider 
+Computed State -> ChangeNotifierProxyProvider, ProxyProvider
+매번 타 provider 의 값이 변경될 때마다 업데이트가 호출되어 새로운 computed state 가 생성되도록함
+*/
+
+/*
+ActiveTodoCount
+-> TodoList 에 의존, 자신이 가지고 있는 상태 없음
+FilteredTodos
+-> TodoFilter, TodoSearch, TodoList 에 의존, 자신이 가지고 있는 상태 없음
+
+
+*/
