@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
+        // ChangeNotifier 와 다른 점은 타입을 2개 명시해야 한다는 것
         StateNotifierProvider<TodoFilter, TodoFilterState>(
           create: (context) => TodoFilter(),
         ),

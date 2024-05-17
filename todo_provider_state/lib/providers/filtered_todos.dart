@@ -29,6 +29,7 @@ class FilteredTodosState extends Equatable {
   }
 }
 
+// LocatorMixin -> ProxyProvider 를 쓸 필요가 없음
 class FilteredTodos extends StateNotifier<FilteredTodosState> with LocatorMixin {
   FilteredTodos() : super(FilteredTodosState.initial());
 
@@ -59,6 +60,7 @@ class FilteredTodos extends StateNotifier<FilteredTodosState> with LocatorMixin 
   //   return FilteredTodosState(filterdTodos: _filteredTodos);
   // }
 
+  // 업데이트 함수를 통해 특정 타입의 state 가 바뀔 때마다 state 를 리슨할 수 있음
   @override
   void update(Locator watch) {
     final Filter filter = watch<TodoFilterState>().filter;
